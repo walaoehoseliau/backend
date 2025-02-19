@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 // Konfigurasi CORS agar lebih aman
 app.use(cors({
-    origin: ['http://localhost:3000'], // Ganti dengan domain frontend Anda
+    origin: ['https://frontend-liart-seven-25.vercel.app'], // Ganti dengan domain frontend Anda
     methods: ['POST']
 }));
 // Ambil API Key dari .env
