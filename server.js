@@ -32,24 +32,46 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] ✅ Keyword diterima: ${keyword}`);
         // Prompt yang lebih optimal untuk OpenAI
         const prompt = `
-        Buat artikel Google Discover dalam bahasa Indonesia dengan Keyword "${keyword}". 
-        Tulis lebih dari 1500 kata dengan gaya Wikipedia, informatif, dan menarik perhatian.
-        Buat judul utama dan subjudul setiap 3 paragraf.
-        Tambahkan minimal 8 bagian dengan struktur SEO-friendly.
-        Format output dalam HTML murni tanpa markdown.
-        Contoh Format Output:
-        <h1>Judul Artikel</h1>
-        <p>paragraf</p>
-        <p>paragraf</p>
-        <p>paragraf</p>
-        <h2>Subjudul 1</h2>
-        <p>paragraf</p>
-        <p>paragraf</p>
-        <p>paragraf</p>
+        Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO ${Keyword}.
+        Tulislah dengan gaya SEO. Gunakan kata transisi. Gunakan kalimat aktif. Tulis lebih dari 2000 kata.
+        Gunakan judul yang sangat kreatif dan unik untuk postingan blog. Tambahkan judul untuk setiap bagian.
+        Buat teks mudah dipahami dan dibaca. Pastikan ada minimal 8 bagian.
+        Setiap bagian harus memiliki minimal dua paragraf.
+        Cantumkan kata kunci yang telah dioptimalkan SEO.
+        Tulis dalam Bahasa Indonesia.
+        Output:        	
+        <h1>Judul Utama</h1>
+        <p>Paragraf</p>
+        <h2>Subjudul</h2>
+        <p>Paragraf</p>
+        <p>Paragraf</p>
+        <h2>Subjudul</h2>
+        <p>Paragraf</p>
+        <p>Paragraf</p>
+        <h2>Subjudul</h2>
+        <ul>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
+        </ul>
+        <h2>Subjudul</h2>
+        <p>Paragraf</p>
+        <p>Paragraf</p>
+        <h2>Subjudul</h2>
+        <ul>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
+        </ul>
+        <h2>Subjudul</h2>
+        <p>Paragraf</p>
+        <p>Paragraf</p>
+        <h2>Subjudul</h2>
+        <ul>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
+        </ul>
         <h2>Kesimpulan</h2>
-        <p>paragraf</p>
-        <p>paragraf</p>
-        <p>paragraf</p>
+        <p>Paragraf</p>
+        <p>Paragraf</p>
         `;
         console.log(`[${new Date().toISOString()}] ✅ Mengirim prompt ke OpenAI...`);
         // Panggil OpenAI API
