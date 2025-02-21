@@ -52,12 +52,6 @@ app.post('/generate', async (req, res) => {
         <ul>
         <li>Paragraf</li>
         <li>Paragraf</li>
-        </ul>
-        <h2>Subjudul</h2>
-        <p>Paragraf</p>
-        <p>Paragraf</p>
-        <h2>Subjudul</h2>
-        <ul>
         <li>Paragraf</li>
         <li>Paragraf</li>
         </ul>
@@ -66,6 +60,18 @@ app.post('/generate', async (req, res) => {
         <p>Paragraf</p>
         <h2>Subjudul</h2>
         <ul>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
+        </ul>
+        <h2>Subjudul</h2>
+        <p>Paragraf</p>
+        <p>Paragraf</p>
+        <h2>Subjudul</h2>
+        <ul>
+        <li>Paragraf</li>
+        <li>Paragraf</li>
         <li>Paragraf</li>
         <li>Paragraf</li>
         </ul>
@@ -76,7 +82,7 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] ✅ Mengirim prompt ke OpenAI...`);
         // Panggil OpenAI API
         const response = await openai.chat.completions.create({
-            model: "gpt-4o-mini",
+            model: "gpt-4o",
             messages: [{ role: "user", content: prompt }],
             max_tokens: 3000,
             temperature: 1.2
