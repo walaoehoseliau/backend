@@ -79,7 +79,7 @@ app.post('/generate', async (req, res) => {
             model: "gpt-4o-mini",
             messages: [{ role: "user", content: prompt }],
             max_tokens: 3000,
-            temperature: 0.7
+            temperature: 1.2
         });
         let htmlArticle = response.choices[0].message.content;
         // Hapus simbol pemformatan yang tidak diinginkan
