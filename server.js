@@ -82,7 +82,7 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] ✅ Mengirim prompt ke OpenAI...`);
         // Panggil OpenAI API
         const response = await openai.chat.completions.create({
-            model: "gpt-4o",
+            model: "gpt-4o-mini",
             messages: [{ role: "user", content: prompt }],
             max_tokens: 3000,
             temperature: 1.2
