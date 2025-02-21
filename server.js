@@ -65,9 +65,6 @@ app.post('/generate', async (req, res) => {
         <h2>Subjudul</h2>
         <p>Paragraf</p>
         <p>Paragraf</p>
-        <h2>Subjudul</h2>
-        <p>Paragraf</p>
-        <p>Paragraf</p>
         <h2>Kesimpulan</h2>
         <p>Paragraf</p>
         <p>Paragraf</p>
@@ -77,8 +74,8 @@ app.post('/generate', async (req, res) => {
         const response = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [{ role: "user", content: prompt }],
-            max_tokens: 5000,
-            temperature: 1.3
+            max_tokens: 4000,
+            temperature: 1.0
         });
         let htmlArticle = response.choices[0].message.content;
         // Hapus simbol pemformatan yang tidak diinginkan
