@@ -74,8 +74,8 @@ app.post('/generate', async (req, res) => {
         const response = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [{ role: "user", content: prompt }],
-            max_tokens: 4000,
-            temperature: 1.0
+            max_tokens: 5000,
+            temperature: 2.0
         });
         let htmlArticle = response.choices[0].message.content;
         // Hapus simbol pemformatan yang tidak diinginkan
