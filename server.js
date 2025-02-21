@@ -46,9 +46,6 @@ app.post('/generate', async (req, res) => {
         <p>Paragraf</p>
         <p>Paragraf</p>
         <h2>Subjudul</h2>
-        <p>Paragraf</p>
-        <p>Paragraf</p>
-        <h2>Subjudul</h2>
         <ul>
         <li>Paragraf</li>
         <li>Paragraf</li>
@@ -68,13 +65,6 @@ app.post('/generate', async (req, res) => {
         <h2>Subjudul</h2>
         <p>Paragraf</p>
         <p>Paragraf</p>
-        <h2>Subjudul</h2>
-        <ul>
-        <li>Paragraf</li>
-        <li>Paragraf</li>
-        <li>Paragraf</li>
-        <li>Paragraf</li>
-        </ul>
         <h2>Kesimpulan</h2>
         <p>Paragraf</p>
         <p>Paragraf</p>
@@ -84,7 +74,7 @@ app.post('/generate', async (req, res) => {
         const response = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [{ role: "user", content: prompt }],
-            max_tokens: 3000,
+            max_tokens: 5000,
             temperature: 1.2
         });
         let htmlArticle = response.choices[0].message.content;
