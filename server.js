@@ -78,16 +78,13 @@ app.post('/generate', async (req, res) => {
         `;
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
         const response = await openai.chat.completions.create({
-          model: "gpt-4o-mini",
-          messages: [],
-          response_format: {
-            "type": "text"
-          },
-          temperature: 1,
-          max_completion_tokens: 15000,
-          top_p: 1,
-          frequency_penalty: 2,
-          presence_penalty: 2
+            model: "gpt-4o-mini",
+            messages: [{ role: "user", content: prompt }],
+            temperature: 1,
+            max_completion_tokens: 15000,
+            top_p: 1,
+            frequency_penalty: 2,
+            presence_penalty: 2
         });
         let htmlArticle = response.choices[0].message.content;
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
