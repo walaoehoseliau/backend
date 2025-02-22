@@ -32,22 +32,16 @@ app.post('/generate', async (req, res) => {
             Setiap bagian harus memiliki minimal dua paragraf.
             Cantumkan kata kunci yang telah dioptimalkan SEO ${keyword}.
             Tulis dalam Bahasa Indonesia.
-            Output:        	
+            
+            Output:
+            
             <h1>Judul Utama</h1>
             <p>Paragraf</p>
+            
             <h2>Subjudul</h2>
             <p>Paragraf</p>
             <p>Paragraf</p>
-            <h2>Subjudul</h2>
-            <ul>
-            <li>Paragraf</li>
-            <li>Paragraf</li>
-            <li>Paragraf</li>
-            <li>Paragraf</li>
-            </ul>
-            <h2>Subjudul</h2>
-            <p>Paragraf</p>
-            <p>Paragraf</p>
+            
             <h2>Subjudul</h2>
             <ul>
             <li>Paragraf</li>
@@ -55,9 +49,27 @@ app.post('/generate', async (req, res) => {
             <li>Paragraf</li>
             <li>Paragraf</li>
             </ul>
+            
             <h2>Subjudul</h2>
             <p>Paragraf</p>
             <p>Paragraf</p>
+            
+            <h2>Subjudul</h2>
+            <ul>
+            <li>Paragraf</li>
+            <li>Paragraf</li>
+            <li>Paragraf</li>
+            <li>Paragraf</li>
+            </ul>
+            
+            <h2>Subjudul</h2>
+            <p>Paragraf</p>
+            <p>Paragraf</p>
+
+            <h2>Subjudul</h2>
+            <p>Paragraf</p>
+            <p>Paragraf</p>
+            
             <h2>Kesimpulan</h2>
             <p>Paragraf</p>
             <p>Paragraf</p>
