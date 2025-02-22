@@ -32,12 +32,12 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] ✅ Keyword diterima: ${keyword}`);
         // Prompt yang lebih optimal untuk OpenAI
         const prompt = `
-        Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO '${keyword}'.
+        Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO ${keyword}.
         Tulislah dengan gaya SEO. Gunakan kata transisi. Gunakan kalimat aktif. Tulis lebih dari 2000 kata.
         Gunakan judul yang sangat kreatif dan unik untuk postingan blog. Tambahkan judul untuk setiap bagian.
         Buat teks mudah dipahami dan dibaca. Pastikan ada minimal 8 bagian.
         Setiap bagian harus memiliki minimal dua paragraf.
-        Cantumkan kata kunci yang telah dioptimalkan SEO.
+        Cantumkan kata kunci yang telah dioptimalkan SEO ${keyword}.
         Tulis dalam Bahasa Indonesia.
         Output:        	
         <h1>Judul Utama</h1>
