@@ -77,16 +77,84 @@ app.post('/generate', async (req, res) => {
             <p>Paragraf</p>
         `;
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
-        const completion = await openai.chat.completions.create({
-          model: "o3-mini",
-          reasoning_effort: "medium",
+        const response = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
           messages: [
             {
-              role: "user", 
-              content: prompt
+              "role": "system",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO {Keyword}.\nTulislah dengan gaya SEO. Gunakan kata transisi. Gunakan kalimat aktif. Tulis lebih dari 2000 kata.\nGunakan judul yang sangat kreatif dan unik untuk postingan blog. Tambahkan judul untuk setiap bagian.\nBuat teks mudah dipahami dan dibaca. Pastikan ada minimal 8 bagian.\nSetiap bagian harus memiliki minimal dua paragraf.\nCantumkan kata kunci yang telah dioptimalkan SEO.\nTulis dalam Bahasa Indonesia."
+                }
+              ]
             }
           ],
-          store: true,
+          response_format: {
+            "type": "text"
+          },
+          tools: [
+            {
+              "type": "function",
+              "function": {
+                "name": "create_blog_post",
+                "description": "Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO.",
+                "parameters": {
+                  "type": "object",
+                  "required": [
+                    "keyword",
+                    "unique_title",
+                    "sections"
+                  ],
+                  "properties": {
+                    "keyword": {
+                      "type": "string",
+                      "description": "Kata kunci yang telah dioptimalkan untuk SEO"
+                    },
+                    "unique_title": {
+                      "type": "string",
+                      "description": "Judul yang sangat kreatif dan unik untuk postingan blog"
+                    },
+                    "sections": {
+                      "type": "array",
+                      "description": "Daftar bagian dalam postingan blog",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "section_title",
+                          "content"
+                        ],
+                        "properties": {
+                          "section_title": {
+                            "type": "string",
+                            "description": "Judul untuk setiap bagian"
+                          },
+                          "content": {
+                            "type": "string",
+                            "description": "Isi dari bagian yang ditulis dalam gaya SEO dan kalimat aktif"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "strict": true
+              }
+            }
+          ],
+          tool_choice: {
+            "type": "function",
+            "function": {
+              "name": "create_blog_post"
+            }
+          },
+          temperature: 1,
+          max_completion_tokens: 12345,
+          top_p: 1,
+          frequency_penalty: 2,
+          presence_penalty: 2
         });
         let htmlArticle = response.choices[0].message.content;
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
