@@ -31,7 +31,7 @@ app.post('/generate', async (req, res) => {
             Buat teks mudah dipahami dan dibaca. Pastikan ada minimal 8 bagian.
             Setiap bagian harus memiliki minimal dua paragraf.
             Cantumkan kata kunci yang telah dioptimalkan SEO ${keyword}.
-            Tulis dalam Bahasa Indonesia.
+            Tulis dalam Bahasa Indonesia.       	
             
             Output:
             
@@ -43,7 +43,6 @@ app.post('/generate', async (req, res) => {
             <p>Paragraf</p>
             
             <h2>Subjudul</h2>
-            <p>Paragraf</p>
             <ul>
             <li>Paragraf</li>
             <li>Paragraf</li>
@@ -56,7 +55,6 @@ app.post('/generate', async (req, res) => {
             <p>Paragraf</p>
             
             <h2>Subjudul</h2>
-            <p>Paragraf</p>
             <ul>
             <li>Paragraf</li>
             <li>Paragraf</li>
