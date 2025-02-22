@@ -77,14 +77,16 @@ app.post('/generate', async (req, res) => {
             <p>Paragraf</p>
         `;
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
-        const response = await openai.chat.completions.create({
-            model: "gpt-4o-mini",
-            messages: [{ role: "user", content: prompt }],
-            temperature: 2,
-            max_completion_tokens: 12231,
-            top_p: 0,
-            frequency_penalty: 0,
-            presence_penalty: 0
+        const completion = await openai.chat.completions.create({
+          model: "o3-mini",
+          reasoning_effort: "medium",
+          messages: [
+            {
+              role: "user", 
+              content: prompt
+            }
+          ],
+          store: true,
         });
         let htmlArticle = response.choices[0].message.content;
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
