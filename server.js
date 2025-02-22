@@ -43,6 +43,7 @@ app.post('/generate', async (req, res) => {
             <p>Paragraf</p>
             
             <h2>Subjudul</h2>
+            <p>Paragraf</p>
             <ul>
             <li>Paragraf</li>
             <li>Paragraf</li>
@@ -55,6 +56,7 @@ app.post('/generate', async (req, res) => {
             <p>Paragraf</p>
             
             <h2>Subjudul</h2>
+            <p>Paragraf</p>
             <ul>
             <li>Paragraf</li>
             <li>Paragraf</li>
