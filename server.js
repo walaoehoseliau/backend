@@ -28,6 +28,7 @@ app.post('/generate', async (req, res) => {
             Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO ${keyword}.
             Tulislah dengan gaya SEO. Gunakan kata transisi. Gunakan kalimat aktif. Tulis lebih dari 2000 kata.
             Gunakan judul yang sangat kreatif dan unik untuk postingan blog.
+            Buat teks mudah dipahami dan dibaca. Pastikan minimal 8 bagian. Setiap bagian harus memiliki minimal dua paragraf.
             contoh judul:
             
             Judul Clickbait & Menarik Perhatian
@@ -66,9 +67,8 @@ app.post('/generate', async (req, res) => {
             "Bagaimana [Orang Sukses] Berhasil dalam [Topik]? Ini Rahasianya!"
             "Pelajaran Berharga dari Pengalaman Gagal dalam [Topik]"
             
-            Buat teks mudah dipahami dan dibaca. Pastikan minimal 8 bagian. Setiap bagian harus memiliki minimal dua paragraf.
             Tulis dalam Bahasa Indonesia.       	
-            Output:
+            OUTPUT:
             
             <h1>Judul Utama</h1>
             <p>Paragraf</p>
@@ -114,7 +114,7 @@ app.post('/generate', async (req, res) => {
             model: "gpt-4o-mini",
             messages: [{ role: "user", content: prompt }],
             max_tokens: 2048,
-            temperature: 0.8
+            temperature: 1.0
         });
         let htmlArticle = response.choices[0].message.content;
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
