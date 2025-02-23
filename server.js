@@ -27,7 +27,7 @@ app.post('/generate', async (req, res) => {
         const prompt = `
             Buatlah postingan blog dengan menggunakan Tag HTML yang telah dioptimalkan untuk SEO ${keyword}.
             Tulislah dengan gaya SEO. Gunakan kata transisi. Gunakan kalimat aktif. Tulis lebih dari 2000 kata.
-            Gunakan judul yang sangat kreatif dan unik untuk postingan blog contoh judul: Petir Kemenangan! 5 Pola Strategis Buka Pintu Cuan Selangit di Game Online${Keyword}, Teknik Jurus Maut ${Keyword} Rahasia Maxwin Terbaru Dari Admin [Nama Acak], Wow! Intip 7 Langkah Sakti Bawa Cuan Besar di Game Online ${Keyword} Jackpot Tanpa Henti.
+            Gunakan judul yang sangat kreatif dan unik untuk postingan blog contoh judul: Petir Kemenangan! 5 Pola Strategis Buka Pintu Cuan Selangit di Game Online , Teknik Jurus Maut Rahasia Maxwin Terbaru Dari Admin Nama Acak, Wow! Intip 7 Langkah Sakti Bawa Cuan Besar di Game Online Jackpot Tanpa Henti.
             Buat teks mudah dipahami dan dibaca. Pastikan minimal 8 bagian. Setiap bagian harus memiliki minimal dua paragraf. Cantumkan kata kunci yang telah dioptimalkan SEO ${keyword}. Tulis dalam Bahasa Indonesia.       	
             
             Output:
