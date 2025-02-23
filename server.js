@@ -35,26 +35,31 @@ app.post('/generate', async (req, res) => {
             "Inilah 7 Fakta Mengejutkan tentang [Topik] yang Jarang Diketahui!"
             "Banyak yang Salah! Ini Cara yang Benar untuk [Topik]"
             "STOP Melakukan Ini Jika Ingin [Manfaat dari Topik]!"
+            
             Judul Berbasis Angka
             "10 Cara Efektif untuk [Topik] yang Terbukti Berhasil"
             "5 Kesalahan Umum dalam [Topik] dan Cara Menghindarinya"
             "7 Tips Terbaik untuk [Topik] Agar Hasilnya Maksimal"
             "15 Rekomendasi [Produk/Strategi] untuk [Topik] yang Harus Dicoba"
+            
             Judul Berbasis Panduan & Cara
             "Panduan Lengkap untuk [Topik] dari Pemula hingga Mahir"
             "Bagaimana Cara [Topik] dalam 5 Langkah Mudah"
             "Langkah Demi Langkah: Cara [Topik] yang Paling Efektif"
             "Tutorial [Topik] yang Mudah Dipahami, Cocok untuk Pemula!"
+            
             Judul Berbasis Perbandingan
             "Mana yang Lebih Baik? [Opsi A] vs [Opsi B] dalam [Topik]"
             "Kelebihan & Kekurangan [Topik]: Harus Dicoba atau Tidak?"
             "Kenapa [Produk/Metode A] Lebih Baik daripada [Produk/Metode B]?"
             "Perbandingan Lengkap: [Topik A] vs [Topik B], Mana yang Lebih Worth It?"
+            
             Judul yang Menggunakan Sensasi atau FOMO (Fear of Missing Out)
             "Wajib Tahu! Tren [Topik] yang Sedang Viral di 2024!"
             "Jangan Sampai Ketinggalan! [Topik] yang Bisa Mengubah Hidupmu"
             "Rahasia Sukses dalam [Topik] yang Hanya Diketahui Segelintir Orang"
             "Hanya Sedikit Orang yang Tahu! Ini Trik [Topik] yang Jarang Diungkap"
+            
             Judul Berbasis Studi Kasus atau Pengalaman Pribadi
             "Saya Mencoba [Topik] Selama 30 Hari, Ini Hasilnya!"
             "Dari Nol hingga Sukses: Kisah Nyata tentang [Topik]"
