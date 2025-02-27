@@ -24,7 +24,7 @@ app.post('/generate', async (req, res) => {
             return res.status(400).json({ error: "Keyword terlalu panjang! Maksimal 100 karakter." });
         }
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
-        const prompt = `Tulis artikel SEO sepanjang 2000 kata tentang $(Keyword) dengan nada SEO. buat judul [Clickbait] yang sangat menarik. Artikel harus informatif, menarik serta unik dalam bahasa Indonesia. (Penting! Buatlah Artikel Versi Terbaikmu Disini Agar Dapat di Baca oleh Banyak Orang di Luar Sana).
+        const prompt = `Tulis artikel SEO sepanjang 2000 kata tentang ${Keyword} dengan nada SEO. buat judul [Clickbait] yang sangat menarik. Artikel harus informatif, menarik serta unik dalam bahasa Indonesia. (Penting! Buatlah Artikel Versi Terbaikmu Disini Agar Dapat di Baca oleh Banyak Orang di Luar Sana).
                         OUTPUT:
                         <h1>Judul</h1>
                         <p>Paragraf</p>
