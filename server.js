@@ -43,6 +43,14 @@ app.post('/generate', async (req, res) => {
                         <h2>Judul</h2>
                         <p>Paragraf</p>
                         <h2>Judul</h2>
+                        <p>Paragraf</p>
+                        <h2>Judul</h2>
+                        <p>Paragraf</p>
+                        <h2>Judul</h2>
+                        <p>Paragraf</p>
+                        <h2>Judul</h2>
+                        <p>Paragraf</p>
+                        <h2>Judul</h2>
                         <p>Paragraf</p>`;
         
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
