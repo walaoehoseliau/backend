@@ -43,29 +43,14 @@ app.post('/generate', async (req, res) => {
                         <h2>Judul</h2>
                         <p>Paragraf</p>
                         <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
-                        <p>Paragraf</p>
-                        <h2>Judul</h2>
                         <p>Paragraf</p>`;
+        
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
         const response = await openai.chat.completions.create({
             model: "gpt-4-turbo",
             messages: [{ role: "user", content: prompt }],
-            max_tokens: 2048,
-            temperature: 1.2
+            max_tokens: 4096,
+            temperature: 1
         });
         let htmlArticle = response.choices[0].message.content;
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
