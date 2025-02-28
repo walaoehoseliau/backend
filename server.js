@@ -46,20 +46,18 @@ app.post('/generate', async (req, res) => {
         Contoh format output:
         
         <h1>Judul Clickbait tentang ${keyword}</h1>
-        <p>Paragraf pembuka yang menarik perhatian pembaca...</p>
+        <p>Paragraf pembuka yang menarik perhatian pembaca</p>
         <h2>Subjudul 1</h2>
-        <p>Isi paragraf yang relevan...</p>
+        <p>Isi paragraf yang relevan</p>
         <h2>Subjudul 2</h2>
-        <p>Isi paragraf yang relevan...</p>
-        lanjutkan hingga artikel mencapai 2000 kata`;
+        <p>Isi paragraf yang relevan</p>
+        lanjutkan hingga artikel mencapai 3000 kata`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
-            model: "gpt-4-turbo",
+            model: "o1-mini",
             messages: [{ role: "user", content: prompt }],
-            max_tokens: 4096,
-            temperature: 0.9
         });
 
         let htmlArticle = response.choices?.[0]?.message?.content || "Gagal menghasilkan artikel.";
