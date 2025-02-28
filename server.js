@@ -36,21 +36,21 @@ app.post('/generate', async (req, res) => {
         const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang "${keyword}". 
         Artikel harus informatif, unik, dan mudah dipahami. Gunakan bahasa yang menarik untuk pembaca Indonesia.
         Struktur artikel harus seperti berikut:
+        Gunakan <h1> untuk judul utama.
+        Gunakan <h2> untuk subjudul yang relevan.
+        Gunakan <p> untuk isi paragraf.
+        Pastikan ada minimal 7-10 subjudul.
+        Berikan informasi yang mendalam dan menarik.
 
-        - Gunakan <h1> untuk judul utama.
-        - Gunakan <h2> untuk subjudul yang relevan.
-        - Gunakan <p> untuk isi paragraf.
-        - Pastikan ada minimal 7-10 subjudul.
-        - Berikan informasi yang mendalam dan menarik.
-
-        **Contoh format output:**
+        Contoh format output:
+        
         <h1>Judul Clickbait tentang ${keyword}</h1>
         <p>Paragraf pembuka yang menarik perhatian pembaca...</p>
         <h2>Subjudul 1</h2>
         <p>Isi paragraf yang relevan...</p>
         <h2>Subjudul 2</h2>
         <p>Isi paragraf yang relevan...</p>
-        (lanjutkan hingga artikel mencapai 2000 kata)`;
+        lanjutkan hingga artikel mencapai 2000 kata`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
