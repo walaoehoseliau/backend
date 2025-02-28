@@ -33,7 +33,7 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
 
         // Prompt yang lebih fleksibel dan dinamis
-        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang '${keyword}'. 
+        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang ${keyword}. 
         Artikel harus informatif, unik, dan mudah dipahami. Gunakan bahasa yang menarik untuk pembaca Indonesia.
         Struktur artikel harus seperti berikut:
         Gunakan <h1> untuk judul utama.
@@ -41,6 +41,7 @@ app.post('/generate', async (req, res) => {
         Gunakan <p> untuk isi paragraf.
         Pastikan ada minimal 7-10 subjudul.
         Berikan informasi yang mendalam dan menarik.
+        Ubah kata Slot Menjadi Game.
 
         Contoh format output:
         
