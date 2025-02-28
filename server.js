@@ -33,7 +33,7 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
 
         // Prompt yang lebih fleksibel dan dinamis
-        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang "${keyword}". 
+        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang '${keyword}'. 
         Artikel harus informatif, unik, dan mudah dipahami. Gunakan bahasa yang menarik untuk pembaca Indonesia.
         Struktur artikel harus seperti berikut:
         Gunakan <h1> untuk judul utama.
@@ -57,7 +57,7 @@ app.post('/generate', async (req, res) => {
         const response = await openai.chat.completions.create({
             model: "gpt-4-turbo",
             messages: [{ role: "user", content: prompt }],
-            max_tokens: 8000, // Meningkatkan batas token untuk hasil lebih panjang
+            max_tokens: 4096,
             temperature: 0.9
         });
 
