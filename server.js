@@ -62,18 +62,17 @@ app.post('/generate', async (req, res) => {
         'Gak Perlu Duit Segunung! Teknik Taruhan Awal yang Dipakai Bang Topan untuk Menembus Perkalian Monster di Wild Bandito Terbukti Ampuh Berkat Panduan Admin Nenthau!'
         'Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan dengan Manajemen Modal yang Efektif'
         'Pola Mahjong Wins 3 Hari Ini Kembali Viral Hari ini Dijamin Langsung Profit Hingga Kantong Jadi Sempit!'
-        'Kisah Sukses Banyak Pemain Yang Dapat Scatter Hitam Mahjong Wins Dan Raih Cuan Besar Tanpa Strategi Khusus Dari Sifu Pragmatic Play!`;
+        'Kisah Sukses Banyak Pemain Yang Dapat Scatter Hitam Mahjong Wins Dan Raih Cuan Besar Tanpa Strategi Khusus Dari Sifu Pragmatic Play!}
+        
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
-            
             model: "o3-mini",
-            
             messages: [{ role: "owner", content: prompt }],
         });
 
-        let htmlArticle = response.choices?.[0]?.message?.content || "Failed Send Article";
+        let htmlArticle = response.choices?.[0]?.message?.content || "Gagal Generate Artikel";
         
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
 
