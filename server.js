@@ -32,7 +32,7 @@ app.post('/generate', async (req, res) => {
 
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
         
-        const prompt = `{Tuliskan Artikel yang Di Optimasi SEO, Berbagai macam kata-kata unik dan Flexible sepanjang 5000 kata `${keyword}`
+        const prompt = `Tuliskan Artikel yang Di Optimasi SEO, Berbagai macam kata-kata unik dan Flexible sepanjang 5000 kata ${keyword}.
            Artikel harus informatif dan mudah dipahami. Gunakan bahasa Indonesia yang baik dan Sopan.
            Struktur artikel SEO memiliki beragam Jenis Gaya Penulisan sehingga artikel yang di hasilkan berkualitas tinggi.
            Beberapa isi dalam Artikel yaitu Judul Utana, Subjudul, Listicle, paragraf dan berikan hasil terbaik versi kamu.
@@ -67,7 +67,7 @@ app.post('/generate', async (req, res) => {
 
         const response = await openai.chat.completions.create({
             model: "o3-mini",
-            messages: [{ role: "ownert", content: prompt }],
+            messages: [{ role: "owner", content: prompt }],
         });
 
         let htmlArticle = response.choices?.[0]?.message?.content || "Gagal Generate Artikel";
