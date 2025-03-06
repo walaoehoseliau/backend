@@ -32,10 +32,10 @@ app.post('/generate', async (req, res) => {
 
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
         
-        const prompt = `{Tuliskan Artikel yang Di Optimasi SEO, Berbagai macam kata-kata unik dan Flexible sepanjang 5000 kata ${keyword}.
+        const prompt = `{Tuliskan Artikel yang Di Optimasi SEO, Berbagai macam kata-kata unik dan Flexible sepanjang 5000 kata `${keyword}`
            Artikel harus informatif dan mudah dipahami. Gunakan bahasa Indonesia yang baik dan Sopan.
            Struktur artikel SEO memiliki beragam Jenis Gaya Penulisan sehingga artikel yang di hasilkan berkualitas tinggi.
-           Beberapa isi dalam Artikel yaitu: Judul Utana, Subjudul, Listicle, paragraf dan berikan hasil terbaik versi kamu.
+           Beberapa isi dalam Artikel yaitu Judul Utana, Subjudul, Listicle, paragraf dan berikan hasil terbaik versi kamu.
            Gunakan <h1> untuk judul utama.
            Gunakan <h2> untuk subjudul yang relevan.
            Gunakan <p> untuk isi paragraf.
@@ -47,7 +47,7 @@ app.post('/generate', async (req, res) => {
            Buat judul Utama Artikel Dengan Mode Clickbaik Dan jangan menggunakan kata tunggal bila perlu buat judul bervariasi.
            Artikel yang Saya Berikan dibawah ini  hanyalah Contoh jika Ada penyampain yang saya berikan kurang kamu mengerti.
 
-        Contoh Judul Utama Harus Clickbait!!!
+        Contoh Judul Utama Harus Clickbait
         
         # Dari Modal Receh ke Kaya Raya! Pemain Bisa Bongkar Strategi Lucky Neko yang Bantu Ubah Hidup Dari Pertalite ke Pertamax
         # Strategi Jitu Bermain Live Casino! Cara Menguasai Baccarat dan Roulette dengan Teknik Taruhan yang Bisa Memaksimalkan Keuntungan
@@ -61,14 +61,13 @@ app.post('/generate', async (req, res) => {
         # Gak Perlu Duit Segunung! Teknik Taruhan Awal yang Dipakai Bang Topan untuk Menembus Perkalian Monster di Wild Bandito Terbukti Ampuh Berkat Panduan Admin Nenthau!
         # Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan dengan Manajemen Modal yang Efektif
         # Pola Mahjong Wins 3 Hari Ini Kembali Viral Hari ini Dijamin Langsung Profit Hingga Kantong Jadi Sempit!
-        # Kisah Sukses Banyak Pemain Yang Dapat Scatter Hitam Mahjong Wins Dan Raih Cuan Besar Tanpa Strategi Khusus Dari Sifu Pragmatic Play}`;
-        
+        # Kisah Sukses Banyak Pemain Yang Dapat Scatter Hitam Mahjong Wins Dan Raih Cuan Besar Tanpa Strategi Khusus Dari Sifu Pragmatic Play`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
             model: "o3-mini",
-            messages: [{ role: "user", content: prompt }],
+            messages: [{ role: "ownert", content: prompt }],
         });
 
         let htmlArticle = response.choices?.[0]?.message?.content || "Gagal Generate Artikel";
