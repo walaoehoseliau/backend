@@ -82,7 +82,7 @@ app.post('/generate', async (req, res) => {
             messages: [{ role: "user", content: prompt }],
         });
 
-        let htmlArticle = response.choices?.[0]?.message?.content || "Gagal Generate Artikel";
+        let htmlArticle = response.choices?.[0]?.message?.content;
         
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
 
