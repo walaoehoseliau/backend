@@ -32,7 +32,7 @@ app.post('/generate', async (req, res) => {
 
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
         
-        const prompt = ``;
+        const prompt = `Please ignore all previous instructions. I want you to respond only in language Indonesian. I want you to act as a blog post title writer that speaks and writes fluent Indonesian. I will type a title or keywords via comma and you will reply with blog post titles in Indonesian. They should all have a hook and high potential to go viral on social media. Write all in Indonesian. my first keywords are ${keyword}`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
