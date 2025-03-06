@@ -31,18 +31,36 @@ app.post('/generate', async (req, res) => {
         }
 
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
+
+        // Prompt yang lebih fleksibel dan dinamis
+        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang ${keyword}. 
+        Artikel harus informatif, unik, dan mudah dipahami. Gunakan bahasa yang menarik untuk pembaca Indonesia.
+        Struktur artikel harus seperti berikut:
+        Gunakan <h1> untuk judul utama.
+        Gunakan <h2> untuk subjudul yang relevan.
+        Gunakan <p> untuk isi paragraf.
+        Pastikan ada minimal 7-10 subjudul.
+        Berikan informasi yang mendalam dan menarik.
+        Ubah kata Slot Menjadi Game.
+
+        Contoh format output:
         
-        const prompt = `Please ignore all previous instructions. I want you to respond only in language Indonesian. I want you to act as a blog post title writer that speaks and writes fluent Indonesian. I will type a title or keywords via comma and you will reply with blog post titles in Indonesian. They should all have a hook and high potential to go viral on social media. Write all in Indonesian. my first keywords are ${keyword}`;
+        <h1>Judul Clickbait tentang ${keyword}</h1>
+        <p>Paragraf pembuka yang menarik perhatian pembaca</p>
+        <h2>Subjudul 1</h2>
+        <p>Isi paragraf yang relevan</p>
+        <h2>Subjudul 2</h2>
+        <p>Isi paragraf yang relevan</p>
+        lanjutkan hingga artikel mencapai 3000 kata`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
-            model: "o3-mini",
+            model: "o1-mini",
             messages: [{ role: "user", content: prompt }],
         });
 
-        let htmlArticle = response.choices?.[0]?.message?.content;
-        
+        let htmlArticle = response.choices?.[0]?.message?.content || "Gagal menghasilkan artikel.";
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
 
         console.log(`[${new Date().toISOString()}] Artikel berhasil dibuat, panjang karakter: ${htmlArticle.length}`);
