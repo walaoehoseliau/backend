@@ -49,25 +49,37 @@ app.post('/generate', async (req, res) => {
 
         Contoh Judul Utama Harus Clickbait
         
-        # Dari Modal Receh ke Kaya Raya! Pemain Bisa Bongkar Strategi Lucky Neko yang Bantu Ubah Hidup Dari Pertalite ke Pertamax
-        # Strategi Jitu Bermain Live Casino! Cara Menguasai Baccarat dan Roulette dengan Teknik Taruhan yang Bisa Memaksimalkan Keuntungan
-        # Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan dengan Manajemen Modal yang Efektif
-        # Gak Perlu Duit Turun Segunung! Inilah Teknik Taruhan Awal yang Dipakai Bang Topan untuk Menembus Perkalian Monster di Wild Bandito Terbukti Ampuh Berkat Panduan Admin Sekkia
-        # Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan Kamu Hanya Dengan Modal Receh Auto Jadi Jutawan
-        # Cara Hilangkan Pusing Jadi Saldo Rekening!!! Hanya 5 Langkah Mudah Raih Kemenangan Maksimal 250 Juta di Fortune Tiger PG Soft!
-        # Teknik Bermain Jitu yang Wajib untuk Kamu Terapkan Pada Saat Bermain Mahjong Ways Dengan Menggunakan Fasilitas Disini
-        # Dikit Dikit Jadi Bukit Lama Kelamaan Jadi Naga! Ayo Buruan Gabung di Game Mahjong Ghacor Rasakan Sensasi Menang Maksimal!
-        # Si Buta Gua Hantu Turun Gunung Kembali Menangkan Jackpot Fantastis Menggunakan 5 Pola Menang Maksimal Ekstrim Jepe 222 Juta di Mahjong Wins 3 Pragmatic dengan Perkalian x550!
-        # Gak Perlu Duit Segunung! Teknik Taruhan Awal yang Dipakai Bang Topan untuk Menembus Perkalian Monster di Wild Bandito Terbukti Ampuh Berkat Panduan Admin Nenthau!
-        # Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan dengan Manajemen Modal yang Efektif
-        # Pola Mahjong Wins 3 Hari Ini Kembali Viral Hari ini Dijamin Langsung Profit Hingga Kantong Jadi Sempit!
-        # Kisah Sukses Banyak Pemain Yang Dapat Scatter Hitam Mahjong Wins Dan Raih Cuan Besar Tanpa Strategi Khusus Dari Sifu Pragmatic Play`;
+            Dari Modal Receh ke Kaya Raya! Pemain Bisa Bongkar Strategi Lucky Neko yang Bantu Ubah Hidup Dari Pertalite ke Pertamax
+            
+            Strategi Jitu Bermain Live Casino! Cara Menguasai Baccarat dan Roulette dengan Teknik Taruhan yang Bisa Memaksimalkan Keuntungan
+            
+            Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan dengan Manajemen Modal yang Efektif
+            
+            Gak Perlu Duit Turun Segunung! Inilah Teknik Taruhan Awal yang Dipakai Bang Topan untuk Menembus Perkalian Monster di Wild Bandito Terbukti Ampuh Berkat Panduan Admin Sekkia
+            
+            Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan Kamu Hanya Dengan Modal Receh Auto Jadi Jutawan
+            
+            Cara Hilangkan Pusing Jadi Saldo Rekening!!! Hanya 5 Langkah Mudah Raih Kemenangan Maksimal 250 Juta di Fortune Tiger PG Soft!
+            
+            Teknik Bermain Jitu yang Wajib untuk Kamu Terapkan Pada Saat Bermain Mahjong Ways Dengan Menggunakan Fasilitas Disini
+            
+            Dikit Dikit Jadi Bukit Lama Kelamaan Jadi Naga! Ayo Buruan Gabung di Game Mahjong Ghacor Rasakan Sensasi Menang Maksimal!
+            
+            Si Buta Gua Hantu Turun Gunung Kembali Menangkan Jackpot Fantastis Menggunakan 5 Pola Menang Maksimal Ekstrim Jepe 222 Juta di Mahjong Wins 3 Pragmatic dengan Perkalian x550!
+            
+            Tak Perlu Duit Segunung! Teknik Taruhan Awal yang Dipakai Bang Topan untuk Menembus Perkalian Monster di Wild Bandito Terbukti Ampuh Berkat Panduan Admin Nenthau!
+            
+            Strategi Terbaru Mahjong Wins 3! Teknik Pola Scatter Hitam yang Bisa Menggandakan Kemenangan dengan Manajemen Modal yang Efektif
+            
+            Pola Mahjong Wins 3 Hari Ini Kembali Viral Hari ini Dijamin Langsung Profit Hingga Kantong Jadi Sempit!
+            
+            Kisah Sukses Banyak Pemain Yang Dapat Scatter Hitam Mahjong Wins Dan Raih Cuan Besar Tanpa Strategi Khusus Dari Sifu Pragmatic Play`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
             model: "o3-mini",
-            messages: [{ role: "owner", content: prompt }],
+            messages: [{ role: "user", content: prompt }],
         });
 
         let htmlArticle = response.choices?.[0]?.message?.content || "Gagal Generate Artikel";
