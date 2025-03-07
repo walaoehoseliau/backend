@@ -51,12 +51,12 @@ app.post('/generate', async (req, res) => {
         <p>Isi paragraf yang relevan</p>
         <h2>Subjudul 2</h2>
         <p>Isi paragraf yang relevan</p>
-        lanjutkan hingga artikel mencapai 3000 kata`;
+        ;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
-            model: "o1-mini",
+            model: "o3-mini",
             messages: [{ role: "user", content: prompt }],
         });
 
