@@ -24,7 +24,7 @@ app.post('/generate', async (req, res) => {
 
         // Validasi keyword
         if (!keyword || typeof keyword !== "string") {
-            return res.status(400).json({ error: "Keyword harus berupa teks!" });
+            return res.status(400).json({ error: "Keyword harus berupa teks!" })
         }
         if (keyword.length > 100) {
             return res.status(400).json({ error: "Keyword terlalu panjang! Maksimal 100 karakter." });
@@ -45,7 +45,7 @@ app.post('/generate', async (req, res) => {
 
         Contoh format output:
         
-        <h1>Judul Clickbait tentang ${keyword}</h1>
+        <h1>Judul Clickbait tentang Hal yang sedang Trending</h1>
         <p>Paragraf pembuka yang menarik perhatian pembaca</p>
         <h2>Subjudul 1</h2>
         <p>Isi paragraf yang relevan</p>
