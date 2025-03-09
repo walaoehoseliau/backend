@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -34,7 +33,8 @@ app.post('/generate', async (req, res) => {
         console.log(`[${new Date().toISOString()}] Keyword diterima: ${keyword}`);
 
         // Prompt yang lebih fleksibel dan dinamis
-        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang ${keyword}. 
+        const prompt = `Buat artikel SEO yang menarik sepanjang 2000 kata tentang ${keyword}.
+        
         Artikel harus informatif, unik, dan mudah dipahami. Gunakan bahasa yang menarik untuk pembaca Indonesia.
         Struktur artikel harus seperti berikut:
         Gunakan <h1> untuk judul utama.
@@ -51,15 +51,16 @@ app.post('/generate', async (req, res) => {
         <h2>Subjudul 1</h2>
         <p>Isi paragraf yang relevan</p>
         <h2>Subjudul 2</h2>
-        <p>Isi paragraf yang relevan</p>
-        ;
+        <p>Isi paragraf yang relevan</p>`;
 
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
 
         const response = await openai.chat.completions.create({
-            model: "o3-mini",
-            messages: [{ role: "user", content: prompt }],
-        });
+        model: "o3-mini",
+            messages: 
+                [{ role: "user", 
+                       content: prompt }],
+                  });
 
         let htmlArticle = response.choices?.[0]?.message?.content || "Gagal menghasilkan artikel.";
         htmlArticle = htmlArticle.replace(/```html|```/g, "").trim();
@@ -68,7 +69,7 @@ app.post('/generate', async (req, res) => {
 
         res.json({ text: htmlArticle });
 
-    } catch (error) {
+        } catch (error) {
         console.error(`[${new Date().toISOString()}] Error OpenAI API:`, error.response ? error.response.data : error.message);
         res.status(500).json({ error: "Terjadi kesalahan dengan OpenAI API, coba lagi nanti." });
     }
