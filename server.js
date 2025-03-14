@@ -5,7 +5,7 @@ const OpenAI = require('openai');
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: ['https://walaoe.vercel.app'],
+    origin: ['https://hoseliau.vercel.app'],
     methods: ['POST']
 }));
 const apiKey = process.env.OPENAI_API_KEY;
@@ -65,7 +65,7 @@ app.post('/generate', async (req, res) => {
                         <p>Paragraf</p>`;
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
         const response = await openai.chat.completions.create({
-            model: "o1-mini",
+            model: "o3-mini",
             messages: [{ role: "user", content: prompt }],
         });
         if (!response.choices || !response.choices[0] || !response.choices[0].message.content) {
@@ -84,5 +84,5 @@ app.post('/generate', async (req, res) => {
         res.status(500).json({ error: errorMessage });
     }
 });
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`[${new Date().toISOString()}] Backend berjalan di port ${PORT}`));
