@@ -29,51 +29,71 @@ app.post('/generate', async (req, res) => {
             
             return res.status(400).json({ error: "Keyword harus berupa teks!" });
         }
-        const trimmedKeyword = keyword.trim();
+        const Keyword = keyword.trim();
         
-        if (trimmedKeyword.length > 100) {
+        if (Keyword.length > 200) {
             
-            return res.status(400).json({ error: "Keyword terlalu panjang! Maksimal 100 karakter." });
+            return res.status(400).json({ error: "Keyword terlalu panjang! Maksimal 200 karakter." });
         }
         
-         console.log(`[${new Date().toISOString()}] Keyword diterima: ${trimmedKeyword}`);
+         console.log(`[${new Date().toISOString()}] Keyword diterima: ${Keyword}`);
         
-         const prompt =`Tulis artikel SEO sepanjang 2000 kata tentang ${trimmedKeyword} dengan gaya SEO. Artikel harus memiliki judul menarik Clickbait. Artikel harus informatif, engaging, dan untuk menarik lebih banyak pembaca Indonesia. Ubah kata Slot menjadi Game!!! 
-                        
-                                                    OUTPUT:
-                                                    
-                                                <h1>Judul</h1>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>
-                                                <h2>Judul</h2>
-                                                <p>Paragraf</p>`;
+         const prompt =`Tulis artikel SEO sepanjang 1000 kata tentang ${Keyword} dengan gaya SEO. Artikel harus memiliki judul menarik Clickbait. Artikel harus informatif, engaging, dan untuk menarik lebih banyak pembaca Indonesia. Ubah kata Slot menjadi Game!!! 
+                        Contoh Judul gunakan kata-kata Clikbait dan unik berikut contohnya judul yang diinginkan:
+                        Bagaimana Hujan Maxwin Hingga Rp500 Juta Menerjang di Mahjong Ways? Kang Asep Ungkap Pola Gacor yang Selalu Berhasil. Simak Caranya!
+                        Menurut Pengamat Geologi Rian Arifin! Orang sukses Bermain Olympus Xmas 1000 Biasa Mempunyai Kebiasaan Mengulangi Buy Spin Sebanyak 5X
+                        Raih Sensasi Kemenangan Luar Biasa di Princess 1000 Strategi Jitu untuk Meraih Keuntungan 711 Juta
+                        Apa yang Membuat 5 Shio Ini Berhasil Meraih Kekayaan di Mahjong Ways 2? Kesabaran atau Keberuntungan?
+                        Ingin Tahun 2025 Penuh Kebahagiaan? Temukan 6 Shio Hoki yang Dapat Membawa Kemakmuran di Mahjong Ways 3!
+                        Jalan Ninja Sukses Mudah! Kisah Inspiratif Kang Asep Tinggalkan Game Lama dan Wujudkan Kekayaan Instan dalam Sehari Lewat Mahjong Ways
+                        Penghasilan Tak Terduga! Tangis Bahagia Master Topan, Impiannya Wujud Berkat Mahjong Ways. Kini Sukses Jalankan Usaha Besar yang di Idamkan
+                        Pemanggil Scatter Jepe Modal Kecil Mahjong Ways 2 Menggila di Setiap Putaran
+                        Rahasia Jackpot di Mahjong Wins3 Settingan Bet Pemicu Black Scatter!
+                        Rahasia Menang Banyak di Scatter Mahjong Ways! Yuk Coba Trik Anti Boncos Terbaik!
+                        Mungkinkah Zeus di Gates of Olympus Suka Kaget?Master Topan Klaim Hasilkan Rp500 Juta dari Petir Maxwin di Jam Gacor, Katanya Putu Sampai Malu Kena Spin Receh
+                        Pengaruh Permainan pada Pemilihan Jam Gacor yang Benar untuk Mendapatkan Maxwin dengan Cepat dan Mudah yang Dipadukan dengan RTP Live yang Akurat
+                        Benarkah Modal Receh Bisa Jadi Rp400 Juta? Kisah Kuli Bangunan Raih Maxwin Berkat RTP Live dan Pola Gacor Mahjong Wins3, Ini Rahasianya
+                        Terbaru! Simpelnya Taktik Gacor Mahjong Ways 3 Memudahkan Munculnya Jackpot Tiada Henti Khusus Hari Ini! Informasi Gacor
+                        Turunnya Scatter dengan Sambarang Petir Maut Gates of Olympus Pola Gacor Bang Danru Semakin Mudah Maxwin dengan Cepat dari Hasil RTP LIVE yang Akurat
+                        Main Mahjong Ways Scatter Hitam di Bet 1000 dengan RTP Live Akurat dan Tempo Spin yang Benar Dijamin 100% Dapatkan Maxwin Spektakuler
+                        Bocoran RTP Game Gacor Malam Ini Di Provider Pragmatic Play Bisa Ciptakan Cuan Besarmu
+                        Inovasi Baru dalam Mahjong Ways Kombinasi Tempo Spin dan RTP LIVE untuk Kemenangan Besar 
+                        Dewa Keberuntungan Dikemas Maxwin Total Sweet Bonanza Xmas Paling Tinggi Live RTP dalam  Dipenghujung Tahun 2025
+                        Selpot Kini Merubah Cara Main Mahjong Ways Dengan Menggunakan Pola Popot Dan Jam Gacor Hanya 12 Kali Spin Auto Sultan!
+                
+                                                                                OUTPUT:
+                                                                            <h1>Judul</h1>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>
+                                                                            <h2>Judul</h2>
+                                                                            <p>Paragraf</p>`;
         
         console.log(`[${new Date().toISOString()}] Mengirim prompt ke OpenAI...`);
         
@@ -87,7 +107,7 @@ app.post('/generate', async (req, res) => {
         
         if (!response.choices || !response.choices[0] || !response.choices[0].message.content) {
             
-            throw new Error("OpenAI API tidak mengembalikan hasil yang valid.");
+        throw new Error("OpenAI API tidak mengembalikan hasil yang valid.");
         }
         let htmlArticle = response.choices[0].message.content;
         
@@ -105,7 +125,7 @@ app.post('/generate', async (req, res) => {
         
         if (error.response && error.response.status === 429) {
             
-            errorMessage = "Terlalu banyak permintaan ke OpenAI API. Silakan coba lagi nanti.";
+        errorMessage = "Terlalu banyak permintaan ke OpenAI API. Silakan coba lagi nanti.";
         }
         
         res.status(500).json({ error: errorMessage });
@@ -115,5 +135,4 @@ app.post('/generate', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => console.log(`[${new Date().toISOString()}] Backend berjalan di port ${PORT}`));
